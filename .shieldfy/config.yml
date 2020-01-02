@@ -4,7 +4,7 @@ include:
 execlude: []
 jobs:
     code-analyzer:
-        enable: false
+        enable: true
         execlude: 
             - Dockerfile
             - super-secret/file.js
