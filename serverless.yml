@@ -1,0 +1,104 @@
+ 
+# Welcome to Serverless!
+#
+# This file is the main config file for your service.
+# It's very minimal at this point and uses default values.
+# You can always add more config options for more control.
+# We've included some commented out config examples here.
+# Just uncomment any of them to get that config option.
+#
+# For full config options, check the docs:
+#    docs.serverless.com
+#
+# Happy Coding!
+
+service: code-analyzer
+#app: your-app-name
+#tenant: your-tenant-name
+
+# You can pin your service to only deploy with a specific Serverless version
+# Check out our docs for more details
+# frameworkVersion: "=X.X.X"
+
+provider:
+  name: aws
+  runtime: nodejs10.x
+  timeout: 59 # optional, in seconds, default is 6
+
+# you can overwrite defaults here
+  stage: ${env:STAGE}
+#  region: us-east-1
+  iamRoleStatements:
+
+    - Effect: Allow
+      Action:
+        - s3:PutObject
+        - s3:PutObjectAcl
+      Resource: "arn:aws:s3:::*/*"
+        
+    - Effect: Allow
+      Action:
+        - logs:CreateLogGroup
+        - logs:CreateLogStream
+        - logs:PutLogEvents
+      Resource: "arn:aws:logs:*:*:*"
+
+      #EXTRA EXAMPLES
+    - Effect: 'Allow'
+      Action:
+        - 's3:ListBucket'
+      # You can put CloudFormation syntax in here.  No one will judge you.
+      # Remember, this all gets translated to CloudFormation.
+      Resource: { 'Fn::Join': ['', ['arn:aws:s3:::', { 'Ref': 'ServerlessDeploymentBucket' }]] }
+      
+    - Effect: 'Allow'
+      Action:
+        - 's3:PutObject'
+      Resource:
+        Fn::Join:
+          - ''
+          - - 'arn:aws:s3:::'
+            - 'Ref': 'ServerlessDeploymentBucket'
+            - '/*'
+
+
+# you can add packaging information here
+package:
+#  include:
+#    - include-me.js
+#    - include-me-dir/**
+exclude:
+  - tmp/**
+  - example/**
+
+functions:
+  analyze1:
+    handler: handler.analyze1
+    timeout: 29 # optional, in seconds, default is 6
+    events:
+      - http:
+          path: analyze
+          method: post
+          cors: true
+  analyze2:
+    handler: handler.analyze2
+    timeout: 29 # optional, in seconds, default is 6
+    events:
+      - http:
+          path: analyze
+          method: post
+          cors:
+            origin: '*'
+  analyze3:
+    handler: handler.analyze3
+    timeout: 29 # optional, in seconds, default is 6
+    events:
+      - http:
+          path: analyze
+          method: post
+          cors:
+            origin: '*'
+
+plugins:
+  - serverless-dotenv-plugin
+  - serverless-offline
