@@ -1,0 +1,16 @@
+Version: 1
+include:
+    - master
+execlude: []
+jobs:
+    code-analyzer:
+        enable: true
+        execlude: 
+            - Dockerfile
+            - super-secret/file.js
+    secret-detector:
+        enable: true
+        execlude:
+            - app.js
+    dependencies-analyzer:
+        enable: true
