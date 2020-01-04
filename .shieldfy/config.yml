@@ -6,7 +6,6 @@ jobs:
     code-analyzer:
         enable: true
          execlude: 
-            - core/appHandler.js
             - app.js
     secret-detector:
         enable: true
