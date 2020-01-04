@@ -5,10 +5,9 @@ execlude: []
 jobs:
     code-analyzer:
         enable: true
-        execlude: 
-            - Dockerfile
-            - super-secret/file.js
     secret-detector:
         enable: true
+        execlude: 
+            - Dockerfile
     dependencies-analyzer:
         enable: false
