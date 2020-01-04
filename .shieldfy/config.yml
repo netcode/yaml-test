@@ -10,7 +10,5 @@ jobs:
             - super-secret/file.js
     secret-detector:
         enable: true
-        execlude:
-            - app.js
     dependencies-analyzer:
         enable: false
