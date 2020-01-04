@@ -5,9 +5,9 @@ execlude: []
 jobs:
     code-analyzer:
         enable: true
+         execlude: 
+            - core/appHandler.js
     secret-detector:
         enable: true
-        execlude: 
-            - Dockerfile
     dependencies-analyzer:
         enable: false
