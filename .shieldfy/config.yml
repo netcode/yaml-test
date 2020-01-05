@@ -5,7 +5,7 @@ execlude: []
 jobs:
     code-analyzer:
         enable: false
-         execlude: 
+        execlude: 
             - app.js
             - vore/appHandler.js
     secret-detector:
