@@ -7,7 +7,6 @@ jobs:
         enable: false
          execlude: 
             - app.js
-            - core/appHandler.js
     secret-detector:
         enable: false
     dependencies-analyzer:
