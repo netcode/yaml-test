@@ -7,6 +7,7 @@ jobs:
         enable: false
          execlude: 
             - app.js
+            - vore/appHandler.js
     secret-detector:
         enable: false
     dependencies-analyzer:
