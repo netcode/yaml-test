@@ -11,4 +11,4 @@ jobs:
     secret-detector:
         enable: false
     dependencies-analyzer:
-        enable: false
+        enable: true
