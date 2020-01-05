@@ -4,9 +4,10 @@ include:
 execlude: []
 jobs:
     code-analyzer:
-        enable: true
+        enable: false
          execlude: 
             - app.js
+            - core/appHandler.js
     secret-detector:
         enable: true
     dependencies-analyzer:
