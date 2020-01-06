@@ -1,12 +1,13 @@
 Version: 1
 include:
     - master
-execlude: []
 jobs:
     code-analyzer:
         enable: false
-        execlude: 
-            - app.js
-            - core/appHandler.js
+        execlude:
+            - Dockerfile
+            - super-secret/file.js
+    secret-detector:
+        enable: false
     dependencies-analyzer:
         enable: false
