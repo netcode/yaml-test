@@ -3,7 +3,7 @@ include:
     - master
 jobs:
     code-analyzer:
-        enable: true
+        enable: false
         execlude:
             - Dockerfile
             - super-secret/file.js
