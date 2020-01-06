@@ -8,6 +8,6 @@ jobs:
             - Dockerfile
             - super-secret/file.js
     secret-detector:
-        enable: false
+        enable: true
     dependencies-analyzer:
         enable: false
