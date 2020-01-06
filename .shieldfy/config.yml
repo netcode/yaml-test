@@ -8,4 +8,4 @@ jobs:
             - Dockerfile
             - super-secret/file.js
     dependencies-analyzer:
-        enable: false
+        enable: true
