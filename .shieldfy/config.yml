@@ -7,5 +7,7 @@ jobs:
         execlude:
             - Dockerfile
             - super-secret/file.js
+    secret-detector:
+        enable: false
     dependencies-analyzer:
         enable: true
